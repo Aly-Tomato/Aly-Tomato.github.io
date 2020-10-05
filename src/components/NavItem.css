@@ -1,0 +1,14 @@
+.nav-item{
+    transition: transform 1s ease;
+}
+
+.nav-item:hover {
+    transform: scale(1.1);
+}
+
+.nav-item > a{
+    text-transform: uppercase;
+    font-weight:bold;
+    text-decoration: none;
+    color: black;
+}
