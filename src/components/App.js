@@ -5,45 +5,37 @@ import { GrFacebook, GrMailOption } from "react-icons/gr";
 import CV from "./CV";
 import NavItem from "./NavItem";
 import Projects from "./Projects";
-import Page from "./Page";
 import Writing from "./Writing";
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
+
 import './App.css';
 
 class App extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            activePage: 'home',
-            home: { hidden: false },
-            projects: { hidden: true },
-            cv: { hidden: true },
-            writing: { hidden: true }
-        };
-        this.showPage = this.showPage.bind(this);
-    }
-
-    showPage(page){
-        this.setState({activePage: page});
-    }
-
-    componentDidUpdate(prevProps, prevState, snapshot) {
-        if (prevState.activePage !== this.state.activePage){
-            let cpyState = this.state;
-            cpyState[`${prevState.activePage}`].hidden = true;
-            cpyState[`${this.state.activePage}`].hidden = false;
-            this.setState(cpyState);
-        }
-    }
 
     render(){
         return (
+            <Router>
+
             <div className={'container'}>
                 <nav>
                     <div className={'internal-links'}>
-                        <NavItem label={'Alyssa Tamayo'} onClick={() => this.showPage('home')} />
-                        <NavItem label={'Projects'} onClick={() => this.showPage('projects')} />
-                        <NavItem label={'Curriculum Vitae'} onClick={() => this.showPage('cv')} />
-                        <NavItem label={'Writing'} onClick={() => this.showPage('writing')}/>
+                        <Link to="/" style={{textDecoration: 'none'}}>
+                            <NavItem label={'Alyssa Tamayo'} />
+                        </Link>
+                        <Link to="/projects" style={{textDecoration: 'none'}}>
+                            <NavItem label={'Projects'} />
+                        </Link>
+                        <Link to="/cv" style={{textDecoration: 'none'}}>
+                            <NavItem label={'Curriculum Vitae'} />
+                        </Link>
+                        <Link to="/writing" style={{textDecoration: 'none'}}>
+                            <NavItem label={'Writing'} />
+                        </Link>
                     </div>
                     <div className={'external-links'}>
                         <NavItem label={'LinkedIn'} icon={<SiLinkedin />} target={'_blank'} link={'https://www.linkedin.com/in/alyssartamayo/'} />
@@ -53,39 +45,26 @@ class App extends Component {
                     </div>
                 </nav>
                 <main>
-                    <Page
-                        id={'home'}
-                        hidden={this.state.home.hidden}
-                        content={
+                    <Switch>
+                        <Route path="/writing">
+                            <Writing />
+                        </Route>
+                        <Route path="/cv">
+                            <CV />
+                        </Route>
+                        <Route path="/projects">
+                            <Projects />
+                        </Route>
+                        <Route path="/">
                             <AnimatedScroller
                                 options={['Dog Mom', 'Couch  Potato', 'Coffee Enthusiast']}
                                 colors={['#42c58a', '#3fa9d4', '#DC143C']}
                             />
-                        }
-                    />
-                    <Page
-                        id={'projects'}
-                        hidden={this.state.projects.hidden}
-                        content={
-                            <Projects />
-                        }
-                    />
-                    <Page
-                        id={'cv'}
-                        hidden={this.state.cv.hidden}
-                        content={
-                            <CV />
-                        }
-                    />
-                    <Page
-                        id={'writing'}
-                        hidden={this.state.writing.hidden}
-                        content={
-                            <Writing />
-                        }
-                    />
+                        </Route>
+                    </Switch>
                 </main>
             </div>
+            </Router>
         );
     }
 }
