@@ -13,7 +13,6 @@ class NavItem extends Component {
         };
         this.handleMouseEnter = this.handleMouseEnter.bind(this);
         this.handleMouseLeave = this.handleMouseLeave.bind(this);
-
     }
 
     handleMouseEnter(event){
@@ -33,7 +32,7 @@ class NavItem extends Component {
             // default behavior is if icon available, hide label text
             textToShow = '';
         }
-        if (this.state.hover){
+        if (this.state.hover || this.state.active){
             after = <div className={'after'}
                      style={{
                          bottom: 0,

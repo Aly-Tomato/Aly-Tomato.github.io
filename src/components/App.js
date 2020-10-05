@@ -2,36 +2,37 @@ import React, { Component } from 'react';
 import AnimatedScroller from "./AnimatedScroller";
 import { SiLinkedin, SiInstagram } from "react-icons/si";
 import { GrFacebook, GrMailOption } from "react-icons/gr";
+import CV from "./CV";
 import NavItem from "./NavItem";
 import Projects from "./Projects";
+import Page from "./Page";
+import Writing from "./Writing";
 import './App.css';
 
 class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            activePage: 'home',
             home: { hidden: false },
-            projects: { hidden: true }
+            projects: { hidden: true },
+            cv: { hidden: true },
+            writing: { hidden: true }
         };
-        this.showContent = this.showContent.bind(this);
-        this.hideAll = this.hideAll.bind(this);
+        this.showPage = this.showPage.bind(this);
     }
 
-    hideAll(){
-        let cpyState = this.state;
-        Object.keys(cpyState).forEach( prop => {
-            console.log(prop);
-            cpyState[`${prop}`].hidden = true;
-        });
-        this.setState(cpyState);
-        console.log(this.state);
+    showPage(page){
+        this.setState({activePage: page});
     }
 
-    showContent(property){
-        this.hideAll();
-        let content = this.state[`${property}`];
-        content.hidden = false;
-        this.setState(content);
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if (prevState.activePage !== this.state.activePage){
+            let cpyState = this.state;
+            cpyState[`${prevState.activePage}`].hidden = true;
+            cpyState[`${this.state.activePage}`].hidden = false;
+            this.setState(cpyState);
+        }
     }
 
     render(){
@@ -39,14 +40,10 @@ class App extends Component {
             <div className={'container'}>
                 <nav>
                     <div className={'internal-links'}>
-                        {/* Working on page navigation
-                            <NavItem label={'Alyssa Tamayo'} onClick={() => this.showContent('home')} />
-                            <NavItem label={'Projects'} onClick={() => this.showContent('projects')} />
-                        */}
-                        <NavItem label={'Alyssa Tamayo'} link={'#'} />
-                        <NavItem label={'Projects'} link={'#'} />
-                        <NavItem label={'Curriculum Vitae'} link={'#'} />
-                        <NavItem label={'Writings'} link={'#'} />
+                        <NavItem label={'Alyssa Tamayo'} onClick={() => this.showPage('home')} />
+                        <NavItem label={'Projects'} onClick={() => this.showPage('projects')} />
+                        <NavItem label={'Curriculum Vitae'} onClick={() => this.showPage('cv')} />
+                        <NavItem label={'Writing'} onClick={() => this.showPage('writing')}/>
                     </div>
                     <div className={'external-links'}>
                         <NavItem label={'LinkedIn'} icon={<SiLinkedin />} target={'_blank'} link={'https://www.linkedin.com/in/alyssartamayo/'} />
@@ -56,13 +53,37 @@ class App extends Component {
                     </div>
                 </nav>
                 <main>
-                    <AnimatedScroller
-                        options={['Dog Mom', 'Couch  Potato', 'Coffee Enthusiast']}
-                        //colors={['#E0B0FF', '#007664', '#CF7557']}
-                        colors={['#42c58a', '#3fa9d4', '#DC143C']}
+                    <Page
+                        id={'home'}
                         hidden={this.state.home.hidden}
+                        content={
+                            <AnimatedScroller
+                                options={['Dog Mom', 'Couch  Potato', 'Coffee Enthusiast']}
+                                colors={['#42c58a', '#3fa9d4', '#DC143C']}
+                            />
+                        }
                     />
-                    <Projects hidden={this.state.projects.hidden}/>
+                    <Page
+                        id={'projects'}
+                        hidden={this.state.projects.hidden}
+                        content={
+                            <Projects />
+                        }
+                    />
+                    <Page
+                        id={'cv'}
+                        hidden={this.state.cv.hidden}
+                        content={
+                            <CV />
+                        }
+                    />
+                    <Page
+                        id={'writing'}
+                        hidden={this.state.writing.hidden}
+                        content={
+                            <Writing />
+                        }
+                    />
                 </main>
             </div>
         );

@@ -8,6 +8,13 @@
   text-align: left;
 }
 
+.row {
+  display: flex;
+  margin-left: 25%;
+  margin-top: 13%;
+  justify-content: center;
+}
+
 #flip {
   height:50px;
   overflow:hidden;
