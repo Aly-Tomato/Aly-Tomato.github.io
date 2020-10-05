@@ -18,9 +18,7 @@ import './App.css';
 class App extends Component {
 
     render(){
-        return (
-            <Router>
-
+        return ( <Router>
             <div className={'container'}>
                 <nav>
                     <div className={'internal-links'}>
@@ -63,9 +61,15 @@ class App extends Component {
                         </Route>
                     </Switch>
                 </main>
+                {/*
+                <div style={{display: 'flex', bottom: 12, position: 'absolute', justifyContent:'center'}}>
+                    <footer>
+                        Alyssa Tamayo
+                    </footer>
+                </div>
+                */}
             </div>
-            </Router>
-        );
+        </Router> );
     }
 }
 
