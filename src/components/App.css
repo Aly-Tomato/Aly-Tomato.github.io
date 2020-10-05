@@ -27,8 +27,3 @@ nav {
 nav > div {
     padding: 20px;
 }
-
-.internal-links > div, .external-links > div {
-    padding: 20px;
-}
-

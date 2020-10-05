@@ -58,7 +58,8 @@ class App extends Component {
                 <main>
                     <AnimatedScroller
                         options={['Dog Mom', 'Couch  Potato', 'Coffee Enthusiast']}
-                        colors={['#42c58a', '#43c7f3', '#DC143C']}
+                        //colors={['#E0B0FF', '#007664', '#CF7557']}
+                        colors={['#42c58a', '#3fa9d4', '#DC143C']}
                         hidden={this.state.home.hidden}
                     />
                     <Projects hidden={this.state.projects.hidden}/>
