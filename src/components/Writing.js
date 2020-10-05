@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
-class Projects extends Component {
+class Writing extends Component {
 
     render(){
         return(
-            <h1> Projects </h1>
+            <h1> Writing </h1>
         );
     }
 }
 
-export default Projects;
+export default Writing;
