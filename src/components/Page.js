@@ -22,7 +22,12 @@ class Page extends Component {
             content = "";
         }
         return(
-            <div id={this.state.id}>
+            <div id={this.state.id}
+                 style={{
+                     display: 'flex',
+                     justifyContent: 'center'
+                 }}
+            >
                 { content }
             </div>
         );
