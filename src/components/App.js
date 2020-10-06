@@ -25,11 +25,11 @@ class App extends Component {
                         <Link to="/" style={{textDecoration: 'none'}}>
                             <NavItem label={'Alyssa Tamayo'} />
                         </Link>
-                        <Link to="/projects" style={{textDecoration: 'none'}}>
-                            <NavItem label={'Projects'} />
-                        </Link>
                         <Link to="/cv" style={{textDecoration: 'none'}}>
                             <NavItem label={'Curriculum Vitae'} />
+                        </Link>
+                        <Link to="/projects" style={{textDecoration: 'none'}}>
+                            <NavItem label={'Projects'} />
                         </Link>
                         <Link to="/writing" style={{textDecoration: 'none'}}>
                             <NavItem label={'Writing'} />
