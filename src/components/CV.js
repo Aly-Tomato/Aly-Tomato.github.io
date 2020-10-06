@@ -14,7 +14,7 @@ class CV extends Component {
             <div style={{
                 display: 'flex',
                 alignItems: 'flex-start',
-                marginLeft: '20%'
+                marginLeft: '19%'
             }}>
                 <div className={'table-of-contents'} style={{
                     display: 'flex',
@@ -168,14 +168,14 @@ class CV extends Component {
                                 </CardContent>
 
                                 {/*--- Computer Skills ---*/}
-                                <Typography variant="h1" id='skills'>
-                                    Computer Skills
-                                </Typography>
                                 <CardContent>
                                     <div style={{
                                         display: 'flex',
                                         flexWrap: 'wrap'
                                     }}>
+                                    <Typography variant="h1" id='skills'>
+                                        Computer Skills
+                                    </Typography>
                                         <ul>
                                             <li> <strong>Languages </strong></li>
                                             <ul>
@@ -268,13 +268,47 @@ class CV extends Component {
                                     </div>
                                 </CardContent>
 
-                                <h1 id='leadership'>Leadership</h1>
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                {/*--- Honors & Awards ---*/}
+                                <CardContent>
+                                    <Typography variant={'h1'} id={'awards'}>
+                                        Honors & Awards
+                                    </Typography>
+                                    <ul>
+                                        <li>Facebook Grace Hopper Celebration Scholar 2019</li>
+                                        <li>Academic Achievement and Leadership Apr 2020</li>
+                                        <li>Academic Achievement and Leadership Jan 2020</li>
+                                        <li>Academic Achievement and Leadership Jan 2019</li>
+                                    </ul>
 
-                                <h1 id="awards">Awards & Achievements</h1>
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                </CardContent>
+
+                                {/*--- LEADERSHIP ---*/}
+                                <CardContent>
+                                    <Typography variant={'h1'} id={'leadership'}>
+                                        Leadership
+                                    </Typography>
+                                    <ul>
+                                        <li>WiCS President</li>
+                                        <li>WiCS Mentorship Program Director</li>
+                                        <li>Sound of Late Board Member</li>
+                                        <li>Ova Novi Ensemble Co-Founder</li>
+                                        <li>Oregon Music Festival Marketing Coordinator</li>
+                                        <li>Oregon Music Festival Visiting Artists Coordinator</li>
+                                    </ul>
+                                </CardContent>
+
+                                {/*--- CONFERENCES ---*/}
+                                <CardContent>
+                                    <Typography variant={'h1'} id={'conferences'}>
+                                        Conferences
+                                    </Typography>
+                                    <ul>
+                                        <li>CRA-WP Grad Cohort 2020 (cancelled due to Covid-19)</li>
+                                        <li>Grace Hopper Celebration 2019, Orlando</li>
+                                        <li>CRA-WP Grad Cohort 2019, Chicago</li>
+                                        <li>Grace Hopper Celebration 2018, Houston</li>
+                                    </ul>
+                                </CardContent>
 
                             </Paper>
                         </Grow>
