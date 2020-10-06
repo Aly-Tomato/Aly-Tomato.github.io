@@ -18,20 +18,18 @@ import './App.css';
 class App extends Component {
 
     render(){
-        return (
-            <Router>
-
+        return ( <Router>
             <div className={'container'}>
                 <nav>
                     <div className={'internal-links'}>
                         <Link to="/" style={{textDecoration: 'none'}}>
                             <NavItem label={'Alyssa Tamayo'} />
                         </Link>
-                        <Link to="/projects" style={{textDecoration: 'none'}}>
-                            <NavItem label={'Projects'} />
-                        </Link>
                         <Link to="/cv" style={{textDecoration: 'none'}}>
                             <NavItem label={'Curriculum Vitae'} />
+                        </Link>
+                        <Link to="/projects" style={{textDecoration: 'none'}}>
+                            <NavItem label={'Projects'} />
                         </Link>
                         <Link to="/writing" style={{textDecoration: 'none'}}>
                             <NavItem label={'Writing'} />
@@ -63,9 +61,15 @@ class App extends Component {
                         </Route>
                     </Switch>
                 </main>
+                {/*
+                <div style={{display: 'flex', bottom: 12, position: 'absolute', justifyContent:'center'}}>
+                    <footer>
+                        Alyssa Tamayo
+                    </footer>
+                </div>
+                */}
             </div>
-            </Router>
-        );
+        </Router> );
     }
 }
 
