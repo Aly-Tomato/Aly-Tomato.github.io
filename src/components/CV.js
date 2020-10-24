@@ -183,6 +183,7 @@ class CV extends Component {
                                                 <li>JavaScript, fluent</li>
                                                 <li>C++, fluent</li>
                                                 <li>C, basic competence</li>
+                                                <li>Power Query, basic competence</li>
                                             </ul>
                                         </ul>
                                         <ul>
@@ -193,6 +194,7 @@ class CV extends Component {
                                                 <li>Express.js</li>
                                                 <li>Qt</li>
                                                 <li>Apache Spark</li>
+                                                <li>Processing Graphical Library</li>
                                             </ul>
                                         </ul>
                                         <ul>
@@ -208,6 +210,8 @@ class CV extends Component {
                                         <ul>
                                             <li> <strong>Applications </strong></li>
                                             <ul>
+                                                <li>Power BI</li>
+                                                <li>Tableau</li>
                                                 <li>Jetbrains IDE's</li>
                                                     <ul>
                                                         <li>PyCharm</li>
